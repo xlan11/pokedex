@@ -1,11 +1,13 @@
+// get the pokedex element
 const pokedex = document.getElementById('pokedex');
-
+//fetch pokemon from the poke api
 const fetchPokemon = () => {
     const promises = [];
     for (let i = 1; i <= 150; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     }
+    //get name, type, image and id of each pokemon
     Promise.all(promises).then((results) => {
         const pokemon = results.map((result) => ({
             name: result.name,
@@ -16,7 +18,7 @@ const fetchPokemon = () => {
         displayPokemon(pokemon);
     });
 };
-
+//create pokemon card elements in html
 const displayPokemon = (pokemon) => {
     console.log(pokemon);
     const pokemonHTMLString = pokemon
