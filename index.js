@@ -31,8 +31,11 @@ const displayPokemon = (pokemon) => {
         </li>
     `
         )
+        // .join to convert pokeman array to a string
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
 };
 
 fetchPokemon();
+
+
