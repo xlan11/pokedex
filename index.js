@@ -8,6 +8,7 @@ const fetchPokemon = () => {
         promises.push(fetch(url).then((res) => res.json()));
     }
     //get name, type, image and id of each pokemon
+    //Promise.all to wait until all requests are finished
     Promise.all(promises).then((results) => {
         const pokemon = results.map((result) => ({
             name: result.name,
