@@ -1,3 +1,3 @@
 # pokedex
 
-from james q quick tutorial
+from a james quick tutorial
